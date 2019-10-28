@@ -1,0 +1,42 @@
+{
+  "name": "@seihon/loader",
+  "description": "A Webpack loader that transforms and organizes MDX for static site generation.",
+  "version": "0.6.24",
+  "main": "lib/index.js",
+  "author": "Billy Kwok <xobkwok@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "seihon",
+    "webpack",
+    "loader",
+    "mdx"
+  ],
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/billykwok/seihon/packages/loader",
+  "bugs": {
+    "url": "https://github.com/billykwok/seihon/issues"
+  },
+  "homepage": "https://github.com/billykwok/seihon",
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "yarn clean && babel src --root-mode=upward --out-dir lib --extensions .ts,.tsx,.mjs,.js,.jsx",
+    "eslint": "eslint ./src/**",
+    "lint": "yarn eslint"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.1",
+    "gray-matter": "^4.0.2",
+    "highland": "^2.13.5",
+    "klaw": "^3.0.0",
+    "loader-utils": "^1.2.3"
+  },
+  "peerDependencies": {
+    "@mdx-js/loader": "^1.5.1",
+    "webpack": "^4.41.2"
+  }
+}

@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sectionize layout with consecutive paragraphs and images 1`] = `
+<section>
+  <h1>
+    Title
+  </h1>
+  <p>
+    Overview
+  </p>
+</section>
+<section>
+  <h2>
+    Subheading 1
+  </h2>
+  <p>
+    Lorem Ipsum
+  </p>
+  <p>
+    <a href="https://google.com/abc.png">
+      Img1
+    </a>
+    <a href="https://google.com/abc.png">
+      Img2
+    </a>
+  </p>
+</section>
+<section>
+  <h2>
+    Subheading 2
+  </h2>
+  <p>
+    Lorem Ipsum 1
+  </p>
+  <p>
+    Lorem Ipsum 2
+  </p>
+</section>
+<section>
+  <h2>
+    Subheading 3
+  </h2>
+  <ul>
+    <li>
+      item 1
+    </li>
+    <li>
+      item 2
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`sectionize layout with custom tag 1`] = `
+<custom>
+  <h1>
+    Title
+  </h1>
+  <p>
+    Overview
+  </p>
+</custom>
+<custom>
+  <h2>
+    Subheading 1
+  </h2>
+  <p>
+    Lorem Ipsum
+  </p>
+  <p>
+    <a href="https://google.com/abc.png">
+      Img
+    </a>
+  </p>
+</custom>
+<custom>
+  <h2>
+    Subheading 2
+  </h2>
+  <p>
+    Lorem Ipsum
+  </p>
+</custom>
+<custom>
+  <h2>
+    Subheading 3
+  </h2>
+  <ul>
+    <li>
+      item 1
+    </li>
+    <li>
+      item 2
+    </li>
+  </ul>
+</custom>
+`;
+
+exports[`sectionize layout with whitelist elements 1`] = `
+<section>
+  <h1>
+    Title
+  </h1>
+  <p>
+    Overview
+  </p>
+  <h2>
+    Subheading 1
+  </h2>
+  <p>
+    Lorem Ipsum
+  </p>
+  <p>
+    <a href="https://google.com/abc.png">
+      Img
+    </a>
+  </p>
+  <ul>
+    <li>
+      item 1
+    </li>
+    <li>
+      item 2
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`sectionize regular layout 1`] = `
+<section>
+  <h1>
+    Title
+  </h1>
+  <p>
+    Overview
+  </p>
+</section>
+<section>
+  <h2>
+    Subheading 1
+  </h2>
+  <p>
+    Lorem Ipsum
+  </p>
+  <p>
+    <a href="https://google.com/abc.png">
+      Img
+    </a>
+  </p>
+</section>
+<section>
+  <h2>
+    Subheading 2
+  </h2>
+  <p>
+    Lorem Ipsum
+  </p>
+</section>
+<section>
+  <h2>
+    Subheading 3
+  </h2>
+  <ul>
+    <li>
+      item 1
+    </li>
+    <li>
+      item 2
+    </li>
+  </ul>
+</section>
+`;
