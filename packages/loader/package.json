@@ -26,7 +26,8 @@
     "clean": "rm -rf lib",
     "build": "yarn clean && babel src --root-mode=upward --out-dir lib --extensions .ts,.tsx,.mjs,.js,.jsx",
     "eslint": "eslint ./src/**",
-    "lint": "yarn eslint"
+    "lint": "yarn eslint",
+    "test": "jest"
   },
   "dependencies": {
     "deepmerge": "^4.2.1",

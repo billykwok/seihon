@@ -1,16 +1,13 @@
-// TypeScript Version: 2.8
-import React = require('react');
+// TypeScript Version: 3.4
+import unified, { Plugin, Settings } from 'unified';
 
-export default class Img extends React.Component<{
-  src: string;
-  alt: string;
-  aspectRatio: number;
-  blur?: number;
-  color?: string;
-  placeholder?: string;
-  srcSet?: string;
-  target?: string;
-  href?: string;
-  messages?: { MANUAL: string; OFFLINE: string; ERROR: string };
-  onClick?: () => void;
-}> {}
+interface Options extends Settings {
+  tagName: string;
+  whitelist: string[];
+}
+
+interface sectionize<S> extends Plugin<S, Options> {}
+
+const sectionize: Plugin<any[], Options>;
+
+export default sectionize;

@@ -8,7 +8,7 @@ export default function compile(entry: string, options = {}) {
     mode: 'production',
     context: __dirname,
     entry,
-    output: { path: path.resolve(__dirname), filename: 'bundle.js' },
+    output: { path: path.resolve(__dirname, '../lib'), filename: 'bundle.js' },
     resolve: {
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
       alias: { fs: 'memfs' }

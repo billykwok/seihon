@@ -1,5 +1,5 @@
 module.exports = {
-  babelrcRoots: ['.', './packages/*'],
+  babelrcRoots: ['.', 'packages/*'],
   presets: [
     ['@babel/preset-env', { targets: { node: 'current' } }],
     [
@@ -7,6 +7,5 @@ module.exports = {
       { isTSX: true, allExtensions: true, allowNamespaces: true }
     ],
     '@babel/preset-react'
-  ],
-  plugins: []
+  ]
 };
