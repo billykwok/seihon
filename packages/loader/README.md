@@ -27,28 +27,28 @@ This is an example of using `@seihon/loader` alone. For a complete example of th
 
 Although Seihon makes no assumption about your project structure, it's always easier to explain its usage with one. Take the following structure as an example.
 
-```markdown
+```text
 my-site/
-src/
-components/
-home.jsx
-post.jsx
-...
-content/
-posts/
-introducing-seihon-js/
-index.mdx
-...
-effective-javascript/
-index.mdx
-...
-collection.config.js
-projects/
-...
-collection.config.js
-...
-webpack.config.js
-...
+  src/
+    components/
+      home.jsx
+      post.jsx
+      ...
+    content/
+      posts/
+        introducing-seihon/
+          index.mdx
+          ...
+        effective-javascript/
+          index.mdx
+          ...
+        collection.config.js
+      projects/
+        ...
+        collection.config.js
+    ...
+  webpack.config.js
+  ...
 ```
 
 ```javascript
@@ -68,6 +68,26 @@ module: {
     // ...
   ];
 }
+```
+
+```frontmatter
+// src/content/posts/introducing-seihon.mdx
+
+---
+title: Introducing Seihon
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```
+
+```frontmatter
+// src/content/posts/effective-javascript.mdx
+
+---
+title: Effective JavaScript
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
 
 ```javascript
