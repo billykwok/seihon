@@ -11,7 +11,7 @@
 
 > Seihon【製本】(Bookbinding in Japanese) is a JavaScript toolkit that improves your MDX transformation pipeline. It allows you to quickly transform MDX documents into a collection (like turning codices into book).
 >
-> More importantly, this toolkit is the last piece of the puzzle that enables automatic generation of CMS-less MDX-based static site.
+> More importantly, this toolkit is the last piece of the puzzle that enables code-splitted CMS-less MDX-based static site generation.
 
 `@seihon/sectionize` is a [`unified`](https://github.com/unifiedjs/unified) plugin that divides a continuous piece of text into chunks wrapped by a customizable tag.
 
@@ -23,7 +23,7 @@
 
 ## Usage
 
-This is an example of using `@seihon/section` alone. For a complete example of the entire Seihon toolkit, please refer to the main [`README.md`](https://github.com/billykwok/seihon/blob/master/README.md).
+This is an example of using `@seihon/section` alone. For a complete example of the entire Seihon toolkit, please refer to the main [`README.md`](https://github.com/billykwok/seihon/blob/master).
 
 ```javascript
 // webpack.config.js

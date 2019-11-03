@@ -7,27 +7,27 @@
 
 Seihon【製本】(Bookbinding in Japanese) is a JavaScript toolkit that improves your MDX transformation pipeline. It allows you to quickly transform MDX documents into a collection (like turning codices into book).
 
-More importantly, this toolkit is the last piece of the puzzle that enables automatic generation of CMS-less MDX-based static site.
+More importantly, this toolkit is the last piece of the puzzle that enables code-splitted CMS-less MDX-based static site generation.
 
 It currently consists of two libraries.
 
-1. [`@seihon/loader`](https://github.com/billykwok/seihon/tree/master/packages/loader/README.md) is a [`webpack`](https://github.com/webpack/webpack) loader that collects [`frontmatter`](https://github.com/jxson/front-matter) from all MDX documents and transforms them into one single object.
+1. [`@seihon/loader`](https://github.com/billykwok/seihon/tree/master/packages/loader) is a [`webpack`](https://github.com/webpack/webpack) loader that collects [`frontmatter`](https://github.com/jxson/front-matter) from all MDX documents and transforms them into one single object.
 
    - It allows you to statically generate Table of Content, Blog Directory, Project List, or anything that contains a collection of data derived from [`frontmatter`](https://github.com/jxson/front-matter), without manual maintenance. You can even paginate the result using query parameters.
    - Additionally, this loader allows you to transform frontmatter into actually content in the markdown part of the MDX document.
 
-2. [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize/README.md) is a [`unified`](https://github.com/unifiedjs/unified) plugin that divides a continuous piece of text into chunks wrapped by a customizable tag.
+2. [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize) is a [`unified`](https://github.com/unifiedjs/unified) plugin that divides a continuous piece of text into chunks wrapped by a customizable tag.
    - To use it with [`@mdx-js/loader`](https://github.com/mdx-js/mdx/tree/master/packages/loader), you can add it to the `remarkPlugins` option.
    - To use it with [`unified`](https://github.com/unifiedjs/unified), you just need to place this plugin into the `.use()` pipeline.
 
-> In most occasions, you need to use this toolkit together with [`webpack`](https://github.com/webpack/webpack), [`@mdx-js/loader`](https://github.com/mdx-js/mdx/tree/master/packages/loader), [`babel-loader`](https://github.com/babel/babel-loader) and [`loadable-components`](https://github.com/smooth-code/loadable-components) in order to build a complete CMS-less static site that automatically.
+> In most occasions, you need to use this toolkit together with [`webpack`](https://github.com/webpack/webpack), [`@mdx-js/loader`](https://github.com/mdx-js/mdx/tree/master/packages/loader), [`babel-loader`](https://github.com/babel/babel-loader) and [`loadable-components`](https://github.com/smooth-code/loadable-components) in order to build a code-splitted CMS-less MDX-based static site.
 
 ## Usage
 
 This is an example of a complete usage of the Seihon library. For individual usage, please refer to their own README.md.
 
-- [`@seihon/loader`](https://github.com/billykwok/seihon/tree/master/packages/loader/README.md)
-- [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize/README.md)
+- [`@seihon/loader`](https://github.com/billykwok/seihon/tree/master/packages/loader)
+- [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize)
 
 Although Seihon makes no assumption about your project structure, it's always easier to explain its usage with one. Take the following structure as an example.
 
