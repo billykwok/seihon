@@ -10,6 +10,7 @@ import defaultCollectionOptions from './defaultCollectionOptions';
 import resolveFile from './resolveFile';
 import serializeFrontmatter from './serializeFrontmatter';
 import matchPath from './matchPath';
+import defaultOptions, { Options } from './defaultOptions';
 
 type SortableStream<T> = Highland.Stream<T> & {
   sortBy: (f: <T>(a: T, b: T) => number) => SortableStream<T>;
@@ -25,10 +26,10 @@ const readFile = highland.wrapCallback(
 export default function collectionLoader(src: string) {
   const callback = this.async();
   this.cacheable();
-  const { name, parallel } = deepmerge(
-    { name: 'collection.config.js', parallel: 10 },
+  const { name, parallel } = deepmerge.all<Options>([
+    defaultOptions,
     getOptions(this)
-  );
+  ]);
 
   if (matchPath(this.resourcePath, /\.mdx?$/gi)) {
     const collectionOptionFile = resolveFile(this, name);
@@ -67,10 +68,7 @@ export default function collectionLoader(src: string) {
       .map(({ path: mdxPath, data: mdxContent }) => {
         const { data, content } = matter(mdxContent);
         const transformedData = transform(data, content);
-        return {
-          path: mdxPath,
-          data: transformedData
-        };
+        return { path: mdxPath, data: transformedData };
       }) as unknown) as SortableStream<{
       path: string;
       data: any;
