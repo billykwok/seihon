@@ -33,7 +33,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "deepmerge": "^4.2.1",
+    "deepmerge": "^4.2.2",
     "unist-util-find-after": "^2.0.4",
     "unist-util-visit-parents": "^3.0.0"
   }
