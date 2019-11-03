@@ -30,7 +30,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "deepmerge": "^4.2.1",
+    "deepmerge": "^4.2.2",
     "gray-matter": "^4.0.2",
     "highland": "^2.13.5",
     "klaw": "^3.0.0",
