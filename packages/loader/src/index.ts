@@ -26,7 +26,7 @@ export default function collectionLoader(src: string) {
   const callback = this.async();
   this.cacheable();
   const { name, parallel } = deepmerge(
-    { name: 'collection.js', parallel: 10 },
+    { name: 'collection.config.js', parallel: 10 },
     getOptions(this)
   );
 
