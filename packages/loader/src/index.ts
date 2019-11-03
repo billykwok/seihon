@@ -28,7 +28,7 @@ export default function collectionLoader(src: string) {
   this.cacheable();
   const { name, parallel } = deepmerge.all<Options>([
     defaultOptions,
-    getOptions(this)
+    getOptions(this) || {}
   ]);
 
   if (matchPath(this.resourcePath, /\.mdx?$/gi)) {
