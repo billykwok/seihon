@@ -17,7 +17,7 @@ export default function compile(entry: string, options = {}) {
     module: {
       rules: [
         { test: /custom\.js$/i, use: { loader, options } },
-        { test: /collection\.js$/i, use: { loader, options } },
+        { test: /collection\.config\.js$/i, use: { loader, options } },
         {
           test: /\.mdx?$/,
           use: ['babel-loader', '@mdx-js/loader', { loader, options }]

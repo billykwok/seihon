@@ -1,9 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sectionize Inserts name and outputs JavaScript 1`] = `
-"function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+exports[`loader generates collection 1`] = `
+"export default [
+  {
+    title: \\"Hello, world!\\",
+    date: \\"Apr 22, 2019\\",
+    summary: \\"Below is an example of JSX embedded in Markdown.\\",
+    tags: [\\"Introduction\\", \\"Testing\\"]
+  }
+];
+"
+`;
 
-import { mdx } from '@mdx-js/react';
+exports[`loader transforms MDX 1`] = `
+"function _extends() {
+  _extends =
+    Object.assign ||
+    function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+  return _extends.apply(this, arguments);
+}
+
+import { mdx } from \\"@mdx-js/react\\";
 /* @jsx mdx */
 
 export const frontmatter = {
@@ -13,34 +40,67 @@ export const frontmatter = {
   tags: [\\"Introduction\\", \\"Testing\\"]
 };
 
-const makeShortcode = name => function MDXDefaultShortcode(props) {
-  console.warn(\\"Component \\" + name + \\" was not imported, exported, or provided by MDXProvider as global scope\\");
-  return mdx(\\"div\\", props);
-};
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      \\"Component \\" +
+        name +
+        \\" was not imported, exported, or provided by MDXProvider as global scope\\"
+    );
+    return mdx(\\"div\\", props);
+  };
 
 const layoutProps = {
   frontmatter
 };
 const MDXLayout = \\"wrapper\\";
-export default function MDXContent({
-  components,
-  ...props
-}) {
-  return mdx(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: \\"MDXLayout\\"
-  }), mdx(\\"h2\\", null, \`Hello, \`, mdx(\\"em\\", {
-    parentName: \\"h2\\"
-  }, \`world\`), \`!\`), mdx(\\"p\\", null, \`Below is an example of JSX embedded in Markdown. \`, mdx(\\"br\\", null), \` \`, mdx(\\"strong\\", {
-    parentName: \\"p\\"
-  }, \`Try and change
-the background color!\`)), mdx(\\"div\\", {
-    style: {
-      padding: '20px',
-      backgroundColor: 'tomato'
-    }
-  }, mdx(\\"h3\\", null, \\"This is JSX\\")));
+export default function MDXContent({ components, ...props }) {
+  return mdx(
+    MDXLayout,
+    _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: \\"MDXLayout\\"
+    }),
+    mdx(
+      \\"h2\\",
+      null,
+      \`Hello, \`,
+      mdx(
+        \\"em\\",
+        {
+          parentName: \\"h2\\"
+        },
+        \`world\`
+      ),
+      \`!\`
+    ),
+    mdx(
+      \\"p\\",
+      null,
+      \`Below is an example of JSX embedded in Markdown. \`,
+      mdx(\\"br\\", null),
+      \` \`,
+      mdx(
+        \\"strong\\",
+        {
+          parentName: \\"p\\"
+        },
+        \`Try and change
+the background color!\`
+      )
+    ),
+    mdx(
+      \\"div\\",
+      {
+        style: {
+          padding: \\"20px\\",
+          backgroundColor: \\"tomato\\"
+        }
+      },
+      mdx(\\"h3\\", null, \\"This is JSX\\")
+    )
+  );
 }
-;
-MDXContent.isMDXComponent = true;"
+MDXContent.isMDXComponent = true;
+"
 `;
