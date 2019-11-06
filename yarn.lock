@@ -2043,7 +2043,7 @@
     url-template "^2.0.8"
 
 "@seihon/loader@file:packages/loader":
-  version "0.0.3"
+  version "0.0.10"
   dependencies:
     deepmerge "^4.2.2"
     gray-matter "^4.0.2"
@@ -2052,7 +2052,7 @@
     loader-utils "^1.2.3"
 
 "@seihon/sectionize@file:packages/sectionize":
-  version "0.0.3"
+  version "0.0.7"
   dependencies:
     deepmerge "^4.2.2"
     unist-util-find-after "^2.0.4"
@@ -2236,27 +2236,17 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":
+"@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@types/vfile-message@*":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@types/vfile-message/-/vfile-message-1.0.1.tgz#e1e9895cc6b36c462d4244e64e6d0b6eaf65355a"
-  integrity sha512-mlGER3Aqmq7bqR1tTTIVHq8KSAFFRyGbrxuM8C/H82g6k7r2fS+IMEkIu3D7JHzG10NvPdR8DNx0jr0pwpp4dA==
+"@types/vfile@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/vfile/-/vfile-4.0.0.tgz#c32d13cbda319bc9f4ab3cacc0263b4ba1dd1ea3"
+  integrity sha512-eleP0/Cz8uVWxARDLi3Axq2+fDdN4ibAXoC6Pv8p6s7znXaUL7XvhgeIhjCiNMnvlLNP+tmCLd+RuCryGgmtEg==
   dependencies:
-    "@types/node" "*"
-    "@types/unist" "*"
-
-"@types/vfile@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@types/vfile/-/vfile-3.0.2.tgz#19c18cd232df11ce6fa6ad80259bc86c366b09b9"
-  integrity sha512-b3nLFGaGkJ9rzOcuXRfHkZMdjsawuDD0ENL9fzTophtBg8FJHSGbH7daXkEpcwy3v7Xol3pAvsmlYyFhR4pqJw==
-  dependencies:
-    "@types/node" "*"
-    "@types/unist" "*"
-    "@types/vfile-message" "*"
+    vfile "*"
 
 "@types/webpack-sources@*":
   version "0.1.5"
@@ -10417,7 +10407,7 @@ vfile-message@^2.0.0:
     "@types/unist" "^2.0.2"
     unist-util-stringify-position "^2.0.0"
 
-vfile@^4.0.0:
+vfile@*, vfile@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/vfile/-/vfile-4.0.1.tgz#fc3d43a1c71916034216bf65926d5ee3c64ed60c"
   integrity sha512-lRHFCuC4SQBFr7Uq91oJDJxlnftoTLQ7eKIpMdubhYcVMho4781a8MWXLy3qZrZ0/STD1kRiKc0cQOHm4OkPeA==
