@@ -55,7 +55,7 @@
     "codecov": "^3.6.1",
     "common-tags": "^1.8.0",
     "conventional-changelog-atom": "^2.0.3",
-    "dtslint": "^1.0.2",
+    "dtslint": "^2.0.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.5.0",
