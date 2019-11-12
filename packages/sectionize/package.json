@@ -12,7 +12,8 @@
     "remark"
   ],
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
   "types": "types/index.d.ts",
   "sideEffects": false,
@@ -35,6 +36,6 @@
   "dependencies": {
     "deepmerge": "^4.2.2",
     "unist-util-find-after": "^2.0.4",
-    "unist-util-visit-parents": "^3.0.0"
+    "unist-util-visit-parents": "^3.0.1"
   }
 }
