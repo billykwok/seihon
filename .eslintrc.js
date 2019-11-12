@@ -40,8 +40,8 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/prefer-includes': 'off',
-    'prefer-spread': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'prefer-spread': 'off',
     'consistent-return': 'off',
     'max-len': 'off',
     'no-console': 'off'
