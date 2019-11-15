@@ -72,7 +72,6 @@
     "lerna": "^3.18.4",
     "memfs": "^2.16.1",
     "prettier": "^1.19.1",
-    "prettier-eslint": "^9.0.0",
     "react": "^16.11.0",
     "rehype-stringify": "^6.0.1",
     "remark-parse": "^7.0.2",

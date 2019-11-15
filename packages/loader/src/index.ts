@@ -10,7 +10,7 @@ import defaultCollectionOptions from './defaultCollectionOptions';
 import resolveFile from './resolveFile';
 import serializeFrontmatter from './serializeFrontmatter';
 import matchPath from './matchPath';
-import defaultOptions, { Options } from './defaultOptions';
+import getDefaultOptions, { Options } from './getDefaultOptions';
 
 type SortableStream<T> = Highland.Stream<T> & {
   sortBy: (f: <T>(a: T, b: T) => number) => SortableStream<T>;
@@ -27,7 +27,7 @@ export default function collectionLoader(src: string) {
   const callback = this.async();
   this.cacheable();
   const { name, parallel } = deepmerge.all<Options>([
-    defaultOptions,
+    getDefaultOptions(path.extname(this.resourcePath)),
     getOptions(this) || {}
   ]);
 
@@ -50,7 +50,8 @@ export default function collectionLoader(src: string) {
     return callback(null, code);
   } else if (matchPath(this.resourcePath, /\.(jsx?|tsx?)$/gi)) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const collectionOptions = require(this.resourcePath);
+    const parsed = require(this.resourcePath);
+    const collectionOptions = 'default' in parsed ? parsed.default : parsed;
     const { transform, sort, serialize, hook } = deepmerge(
       defaultCollectionOptions,
       collectionOptions
