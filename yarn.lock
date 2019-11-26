@@ -2199,7 +2199,7 @@
     url-template "^2.0.8"
 
 "@seihon/loader@file:packages/loader":
-  version "0.0.3"
+  version "0.1.0"
   dependencies:
     deepmerge "^4.2.2"
     gray-matter "^4.0.2"
@@ -2208,7 +2208,7 @@
     loader-utils "^1.2.3"
 
 "@seihon/sectionize@file:packages/sectionize":
-  version "0.0.3"
+  version "0.0.8"
   dependencies:
     deepmerge "^4.2.2"
     unist-util-find-after "^2.0.4"
@@ -7217,10 +7217,10 @@ mem@^4.0.0:
     mimic-fn "^2.0.0"
     p-is-promise "^2.0.0"
 
-memfs@^2.16.1:
-  version "2.16.1"
-  resolved "https://registry.yarnpkg.com/memfs/-/memfs-2.16.1.tgz#ef6ed9b24c7df07704758fce42431c3838291ffa"
-  integrity sha512-hOUIxeXPuDeryPx1h+WxkBWJwWmd8f1lYXBdUMFMLEhxGGlaP6ri30eW9K4cMpbuizNsAwQe2SK3KyRa9qodXw==
+memfs@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/memfs/-/memfs-3.0.0.tgz#51197997f479c725e58f66a54280e1e4dfe9c94b"
+  integrity sha512-GmCjl40ke3OSSbwet/VQtoq320gIavoO8bMCe4NDbxuLEFV3Cj47+2I1wnv8af3a6JErJIn7Q6/5GUTiPEysaw==
   dependencies:
     fast-extend "0.0.2"
     fs-monkey "^0.3.3"
