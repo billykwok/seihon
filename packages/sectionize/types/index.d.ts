@@ -1,5 +1,6 @@
 // TypeScript Version: 3.4
-import unified, { Plugin, Settings } from 'unified';
+import unified = require('unified');
+import { Plugin, Settings } from 'unified';
 
 interface Options extends Settings {
   tagName: string;
