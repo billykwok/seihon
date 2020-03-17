@@ -34,7 +34,7 @@
     "gray-matter": "^4.0.2",
     "highland": "^2.13.5",
     "klaw": "^3.0.0",
-    "loader-utils": "^1.2.3"
+    "loader-utils": "^2.0.0"
   },
   "peerDependencies": {
     "@mdx-js/loader": "^1.5.5",
