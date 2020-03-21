@@ -72,7 +72,7 @@
     "jest-serializer-html": "^7.0.0",
     "lerna": "^3.20.2",
     "memfs": "^3.0.4",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.0",
     "react": "^16.12.0",
     "rehype-stringify": "^6.0.1",
     "remark-parse": "^7.0.2",
