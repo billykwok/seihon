@@ -8,7 +8,7 @@ describe('loader', () => {
     const stats = await compile(path.resolve(__dirname, './test.mdx'));
     const output = stats.toJson().modules[1].modules[0].source;
     expect(prettier.format(output, { parser: 'babel' })).toMatchSnapshot();
-  });
+  }, 30000);
 
   test('generates collection', async () => {
     const stats = await compile(
@@ -16,5 +16,5 @@ describe('loader', () => {
     );
     const output = stats.toJson().modules[0].source;
     expect(prettier.format(output, { parser: 'babel' })).toMatchSnapshot();
-  });
+  }, 30000);
 });

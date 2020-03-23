@@ -6,7 +6,7 @@ export default function serializeFrontmatter(
   return (
     '{' +
     Object.keys(data)
-      .map(key => {
+      .map((key) => {
         const value =
           key in serialize
             ? serialize[key](data[key], context)

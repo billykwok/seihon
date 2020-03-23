@@ -5,7 +5,7 @@ export type Options = {
 
 const defaultOptions: Options = {
   tagName: 'section',
-  whitelist: ['paragraph', 'list']
+  whitelist: ['paragraph', 'list'],
 };
 
 export default defaultOptions;

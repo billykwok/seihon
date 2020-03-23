@@ -28,7 +28,7 @@ export default function collectionLoader(src: string) {
   this.cacheable();
   const { name, parallel } = deepmerge.all<Options>([
     getDefaultOptions(path.extname(this.resourcePath)),
-    getOptions(this) || {}
+    getOptions(this) || {},
   ]);
 
   if (matchPath(this.resourcePath, /\.mdx?$/gi)) {
@@ -60,7 +60,7 @@ export default function collectionLoader(src: string) {
     this.addDependency(this.resourcePath);
     const stream = klaw(this.context) as unknown;
     let streams = (highland(stream as Highland.Stream<klaw.Item>)
-      .filter(f => !f.stats.isDirectory() && matchPath(f.path, /\.mdx?$/gi))
+      .filter((f) => !f.stats.isDirectory() && matchPath(f.path, /\.mdx?$/gi))
       .map((item, ...rest) => {
         this.addDependency(item.path);
         return readFile(item.path, ...rest);
@@ -81,7 +81,7 @@ export default function collectionLoader(src: string) {
       .map(({ path: mdxPath, data: mdxData }) =>
         serializeFrontmatter(mdxData, serialize, path.dirname(mdxPath))
       )
-      .toArray(data =>
+      .toArray((data) =>
         callback(null, hook(`export default [${data.join(',')}];\n`))
       );
   }

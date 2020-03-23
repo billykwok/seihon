@@ -1,4 +1,4 @@
-import { Node, Parent } from 'unist';
+import type { Node, Parent } from 'unist';
 
 export default function isFirstInSection<T extends Node, S extends Parent>(
   whitelist: string[]

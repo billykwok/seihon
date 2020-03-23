@@ -11,7 +11,7 @@ export default function compile(entry: string, options = {}) {
     output: { path: path.resolve(__dirname, '../lib'), filename: 'bundle.js' },
     resolve: {
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
-      alias: { fs: 'memfs' }
+      alias: { fs: 'memfs' },
     },
     externals: { react: 'react' },
     module: {
@@ -20,10 +20,10 @@ export default function compile(entry: string, options = {}) {
         { test: /collection\.config\.js$/i, use: { loader, options } },
         {
           test: /\.mdx?$/,
-          use: ['babel-loader', '@mdx-js/loader', { loader, options }]
-        }
-      ]
-    }
+          use: ['babel-loader', '@mdx-js/loader', { loader, options }],
+        },
+      ],
+    },
   });
 
   return new Promise<Stats>((resolve, reject) => {

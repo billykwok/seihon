@@ -6,10 +6,10 @@ type Options = {
 };
 
 const defaultCollectionOptions: Options = {
-  transform: data => data,
+  transform: (data) => data,
   sort: undefined,
   serialize: {},
-  hook: output => output
+  hook: (output) => output,
 };
 
 export default defaultCollectionOptions;

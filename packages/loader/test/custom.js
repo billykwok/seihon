@@ -1,6 +1,6 @@
 module.exports = {
-  transform: data => data,
+  transform: (data) => data,
   sort: undefined,
   serialize: {},
-  hook: output => output
+  hook: (output) => output,
 };
