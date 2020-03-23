@@ -16,7 +16,7 @@ function process(options?: any) {
       .use(html)
       .processSync(
         prettier.format(source(literals, ...placeholders), {
-          parser: 'markdown'
+          parser: 'markdown',
         })
       )
       .toString();

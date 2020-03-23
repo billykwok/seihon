@@ -5,5 +5,6 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
   notify: true,
   notifyMode: 'always',
-  verbose: true
+  coverageProvider: 'v8',
+  verbose: true,
 };

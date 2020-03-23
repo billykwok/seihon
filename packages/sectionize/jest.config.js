@@ -2,5 +2,6 @@ module.exports = {
   displayName: '@seihon/sectionize',
   testEnvironment: 'node',
   snapshotSerializers: ['jest-serializer-html'],
-  verbose: true
+  coverageProvider: 'v8',
+  verbose: true,
 };

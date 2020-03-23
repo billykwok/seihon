@@ -1,5 +1,5 @@
 import findAfter from 'unist-util-find-after';
-import { Node, Parent } from 'unist';
+import type { Node, Parent } from 'unist';
 
 export default function sectionize<T extends Node, S extends Parent>(
   node: T,
@@ -24,7 +24,7 @@ export default function sectionize<T extends Node, S extends Parent>(
   const section = {
     type: 'section',
     children: between,
-    data: { hName: tagName }
+    data: { hName: tagName },
   };
 
   parent.children.splice(startIndex, section.children.length, section);

@@ -1,9 +1,9 @@
 import path from 'path';
 import fs from 'fs';
-import Webpack from 'webpack';
+import type { loader } from 'webpack';
 
 export default function resolveFile(
-  loader: Webpack.loader.LoaderContext,
+  loader: loader.LoaderContext,
   configFileName: string
 ) {
   let dir = loader.resourcePath;

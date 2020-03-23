@@ -6,8 +6,8 @@ exports[`loader generates collection 1`] = `
     title: \\"Hello, world!\\",
     date: \\"Apr 22, 2019\\",
     summary: \\"Below is an example of JSX embedded in Markdown.\\",
-    tags: [\\"Introduction\\", \\"Testing\\"]
-  }
+    tags: [\\"Introduction\\", \\"Testing\\"],
+  },
 ];
 "
 `;
@@ -16,7 +16,7 @@ exports[`loader transforms MDX 1`] = `
 "function _extends() {
   _extends =
     Object.assign ||
-    function(target) {
+    function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
         for (var key in source) {
@@ -30,6 +30,7 @@ exports[`loader transforms MDX 1`] = `
   return _extends.apply(this, arguments);
 }
 
+import React from \\"react\\";
 import { mdx } from \\"@mdx-js/react\\";
 /* @jsx mdx */
 
@@ -37,10 +38,10 @@ export const frontmatter = {
   title: \\"Hello, world!\\",
   date: \\"Apr 22, 2019\\",
   summary: \\"Below is an example of JSX embedded in Markdown.\\",
-  tags: [\\"Introduction\\", \\"Testing\\"]
+  tags: [\\"Introduction\\", \\"Testing\\"],
 };
 
-const makeShortcode = name =>
+const makeShortcode = (name) =>
   function MDXDefaultShortcode(props) {
     console.warn(
       \\"Component \\" +
@@ -51,7 +52,7 @@ const makeShortcode = name =>
   };
 
 const layoutProps = {
-  frontmatter
+  frontmatter,
 };
 const MDXLayout = \\"wrapper\\";
 export default function MDXContent({ components, ...props }) {
@@ -59,7 +60,7 @@ export default function MDXContent({ components, ...props }) {
     MDXLayout,
     _extends({}, layoutProps, props, {
       components: components,
-      mdxType: \\"MDXLayout\\"
+      mdxType: \\"MDXLayout\\",
     }),
     mdx(
       \\"h2\\",
@@ -68,7 +69,7 @@ export default function MDXContent({ components, ...props }) {
       mdx(
         \\"em\\",
         {
-          parentName: \\"h2\\"
+          parentName: \\"h2\\",
         },
         \`world\`
       ),
@@ -83,7 +84,7 @@ export default function MDXContent({ components, ...props }) {
       mdx(
         \\"strong\\",
         {
-          parentName: \\"p\\"
+          parentName: \\"p\\",
         },
         \`Try and change
 the background color!\`
@@ -94,8 +95,8 @@ the background color!\`
       {
         style: {
           padding: \\"20px\\",
-          backgroundColor: \\"tomato\\"
-        }
+          backgroundColor: \\"tomato\\",
+        },
       },
       mdx(\\"h3\\", null, \\"This is JSX\\")
     )

@@ -1,5 +1,6 @@
 module.exports = {
   displayName: '@seihon/collection-loader',
   testEnvironment: 'node',
-  verbose: true
+  coverageProvider: 'v8',
+  verbose: true,
 };
