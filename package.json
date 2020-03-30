@@ -52,7 +52,7 @@
     "@types/unist": "^2.0.3",
     "@types/vfile": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.1.0",
