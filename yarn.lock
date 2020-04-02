@@ -2344,7 +2344,7 @@
     url-template "^2.0.8"
 
 "@seihon/loader@file:packages/loader":
-  version "0.1.1"
+  version "0.1.2"
   dependencies:
     deepmerge "^4.2.2"
     gray-matter "^4.0.2"
@@ -2353,7 +2353,7 @@
     loader-utils "^2.0.0"
 
 "@seihon/sectionize@file:packages/sectionize":
-  version "0.0.9"
+  version "0.0.10"
   dependencies:
     deepmerge "^4.2.2"
     unist-util-find-after "^3.0.0"
@@ -2518,10 +2518,10 @@
   resolved "https://registry.yarnpkg.com/@types/parsimmon/-/parsimmon-1.10.0.tgz#ffb81cb023ff435a41d4710a29ab23c561dc9fdf"
   integrity sha512-bsTIJFVQv7jnvNiC42ld2pQW2KRI+pAG243L+iATvqzy3X6+NH1obz2itRKDZZ8VVhN3wjwYax/VBGCcXzgTqQ==
 
-"@types/prettier@^1.19.1":
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-1.19.1.tgz#33509849f8e679e4add158959fdb086440e9553f"
-  integrity sha512-5qOlnZscTn4xxM5MeGXAMOsIOIKIbh9e85zJWfBRVPlRMEVawzoPhINYbRGkBZCI8LxvBe7tJCdWiarA99OZfQ==
+"@types/prettier@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.0.0.tgz#dc85454b953178cc6043df5208b9e949b54a3bc4"
+  integrity sha512-/rM+sWiuOZ5dvuVzV37sUuklsbg+JPOP8d+nNFlo2ZtfpzPiPvh1/gc8liWOLBqe+sR+ZM7guPaIcTt6UZTo7Q==
 
 "@types/source-list-map@*":
   version "0.1.2"
