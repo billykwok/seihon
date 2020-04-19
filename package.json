@@ -78,7 +78,7 @@
     "prettier": "^2.0.1",
     "react": "^16.13.1",
     "rehype-stringify": "^6.0.1",
-    "remark-parse": "^7.0.2",
+    "remark-parse": "^8.0.1",
     "remark-rehype": "^5.0.0",
     "typescript": "^3.8.3",
     "unified": "^8.4.2",
