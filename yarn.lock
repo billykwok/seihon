@@ -2344,7 +2344,7 @@
     url-template "^2.0.8"
 
 "@seihon/loader@file:packages/loader":
-  version "0.1.1"
+  version "0.1.2"
   dependencies:
     deepmerge "^4.2.2"
     gray-matter "^4.0.2"
@@ -2353,7 +2353,7 @@
     loader-utils "^2.0.0"
 
 "@seihon/sectionize@file:packages/sectionize":
-  version "0.0.9"
+  version "0.0.10"
   dependencies:
     deepmerge "^4.2.2"
     unist-util-find-after "^3.0.0"
@@ -2503,10 +2503,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.8.tgz#e469b4bf9d1c9832aee4907ba8a051494357c12c"
   integrity sha512-aX+gFgA5GHcDi89KG5keey2zf0WfZk/HAQotEamsK2kbey+8yGKcson0hbK8E+v0NArlCJQCqMP161YhV6ZXLg==
 
-"@types/node@^13.9.3":
-  version "13.9.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.3.tgz#6356df2647de9eac569f9a52eda3480fa9e70b4d"
-  integrity sha512-01s+ac4qerwd6RHD+mVbOEsraDHSgUaefQlEdBbUolnQFjKwCr7luvAlEwW1RFojh67u0z4OUTjPn9LEl4zIkA==
+"@types/node@^14.0.1":
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.1.tgz#5d93e0a099cd0acd5ef3d5bde3c086e1f49ff68c"
+  integrity sha512-FAYBGwC+W6F9+huFIDtn43cpy7+SzG+atzRiTfdp3inUKL2hXnd4rG8hylJLIh4+hqrQy1P17kvJByE/z825hA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
