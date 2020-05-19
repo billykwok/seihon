@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { loader } from 'webpack';
 
 export default function resolveFile(

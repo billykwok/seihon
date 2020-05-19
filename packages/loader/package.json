@@ -37,7 +37,7 @@
     "loader-utils": "^2.0.0"
   },
   "peerDependencies": {
-    "@mdx-js/loader": "^1.5.7",
-    "webpack": "^4.42.0"
+    "@mdx-js/loader": "^1.6.1",
+    "webpack": "^4.43.0"
   }
 }
