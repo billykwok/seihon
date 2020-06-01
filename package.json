@@ -52,7 +52,7 @@
     "@types/prettier": "^2.0.0",
     "@types/unist": "^2.0.3",
     "@types/vfile": "^4.0.0",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
     "@typescript-eslint/parser": "^2.34.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
