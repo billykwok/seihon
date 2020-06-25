@@ -1,7 +1,4 @@
-export type Options = {
-  tagName?: string;
-  whitelist?: string[];
-};
+import type { Options } from './types';
 
 const defaultOptions: Options = {
   tagName: 'section',

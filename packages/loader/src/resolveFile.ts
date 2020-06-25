@@ -6,7 +6,7 @@ import type { loader } from 'webpack';
 export default function resolveFile(
   loader: loader.LoaderContext,
   configFileName: string
-) {
+): string {
   let dir = loader.resourcePath;
   do {
     dir = path.dirname(dir);

@@ -1,4 +1,4 @@
-export type Options = { name: string; parallel: number };
+import type { Options } from './types';
 
 function getDefaultOptions(ext: string): Options {
   return {
