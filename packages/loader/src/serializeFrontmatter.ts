@@ -1,8 +1,8 @@
 export default function serializeFrontmatter(
-  data: string,
-  serialize: { [property: string]: (value: any, context: string) => string },
+  data: Record<string, unknown>,
+  serialize: Record<string, (value: any, context: string) => string>,
   context: string
-) {
+): string {
   return (
     '{' +
     Object.keys(data)

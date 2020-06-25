@@ -1,11 +1,6 @@
-type Options = {
-  transform?: (data: { [property: string]: any }, content?: string) => any;
-  sort?: (a: any, b: any) => number;
-  serialize?: { [property: string]: (value: any, context: string) => string };
-  hook?: (output: string) => string;
-};
+import type { CollectionOptions } from './types';
 
-const defaultCollectionOptions: Options = {
+const defaultCollectionOptions: CollectionOptions = {
   transform: (data) => data,
   sort: undefined,
   serialize: {},

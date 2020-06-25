@@ -8,7 +8,7 @@ module.exports = {
     node: true,
     browser: true,
   },
-  parser: '@typescript-eslint/parser',
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 11,
     sourceType: 'module',
@@ -16,8 +16,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   settings: {
-    'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
-    'import/extensions': ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.json'],
+    'import/extensions': ['.js', '.mjs', '.json'],
     'import/resolver': {
       lerna: { packages: path.resolve(__dirname, 'packages') },
       node: {
@@ -27,23 +26,41 @@ module.exports = {
       webpack: { config: {} },
     },
   },
-  plugins: ['@typescript-eslint', 'import', 'prettier'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:prettier/recommended',
-    'prettier',
-  ],
+  plugins: ['import', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'prettier'],
   rules: {
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/prefer-includes': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
     'prefer-spread': 'off',
     'consistent-return': 'off',
     'max-len': 'off',
     'no-console': 'off',
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      settings: {
+        'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
+        'import/extensions': ['.ts', '.tsx'],
+      },
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:prettier/recommended',
+        'prettier',
+      ],
+      plugins: ['@typescript-eslint', 'import', 'prettier'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': [
+          'error',
+          { allowArgumentsExplicitlyTypedAsAny: true },
+        ],
+        '@typescript-eslint/prefer-includes': 'off',
+      },
+    },
+  ],
 };
