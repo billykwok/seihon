@@ -1,8 +1,10 @@
-# How to contribute
+# Guideline
+
+## Thanks
 
 I'm really glad that you're reading this, because your help would make this project even better and benefit more people.
 
-## Guideline
+## Best Practices
 
 Since it is a small repo, there is not much restriction on how you should contribute. In general, just follow the guideline below.
 

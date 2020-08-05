@@ -1,7 +1,7 @@
-# Seihon
+# <img src="https://raw.githubusercontent.com/billykwok/seihon/master/logo.png" width="240" alt="SEIHON" />
 
+[![Babel Macro](https://img.shields.io/badge/babel--macro-%F0%9F%8E%A3-f5da55.svg?style=flat-square)](https://github.com/kentcdodds/babel-plugin-macros)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
-[![Greenkeeper badge](https://badges.greenkeeper.io/billykwok/seihon.svg)](https://greenkeeper.io)
 [![codecov](https://codecov.io/gh/billykwok/seihon/branch/master/graph/badge.svg)](https://codecov.io/gh/billykwok/seihon)
 [![CircleCI](https://circleci.com/gh/billykwok/seihon/tree/master.svg?style=svg)](https://circleci.com/gh/billykwok/seihon/tree/master)
 
@@ -16,7 +16,7 @@ It currently consists of two libraries.
    - It allows you to statically generate Table of Content, Blog Directory, Project List, or anything that contains a collection of data derived from [`frontmatter`](https://github.com/jxson/front-matter), without manual maintenance. You can even paginate the result using query parameters.
    - Additionally, this loader allows you to transform frontmatter into actually content in the markdown part of the MDX document.
 
-2. [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize) is a [`unified`](https://github.com/unifiedjs/unified) plugin that divides a continuous piece of text into chunks wrapped by a customizable tag.
+2. [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize) is a [`unified`](https://github.com/unifiedjs/unified) plugin that divides a continuous piece of content into chunks wrapped by a customizable tag.
    - To use it with [`@mdx-js/loader`](https://github.com/mdx-js/mdx/tree/master/packages/loader), you can add it to the `remarkPlugins` option.
    - To use it with [`unified`](https://github.com/unifiedjs/unified), you just need to place this plugin into the `.use()` pipeline.
 
@@ -67,15 +67,15 @@ module: {
         'babel-loader',
         {
           loader: '@mdx-js/loader',
-          options: { remarkPlugins: [sectionize] }
+          options: { remarkPlugins: [sectionize] },
         },
-        '@seihon/loader'
-      ]
+        '@seihon/loader',
+      ],
     },
     {
       test: /collection\.config\.js$/,
-      use: ['babel-loader', '@seihon/loader']
-    }
+      use: ['babel-loader', '@seihon/loader'],
+    },
     // ...
   ];
 }

@@ -1,7 +1,8 @@
 {
-  "name": "@seihon/sectionize",
-  "description": "A Unified plugin for dividing a continuous piece of content into chunks wrapped by a customizable tag",
-  "version": "0.0.11",
+  "name": "@seihon/macro",
+  "description": "A Babel macro for @seihon/loader",
+  "version": "0.0.1",
+  "type": "commonjs",
   "exports": {
     "require": "./lib/index.js"
   },
@@ -19,11 +20,11 @@
   "license": "MIT",
   "keywords": [
     "seihon",
-    "mdx",
     "webpack",
-    "remark"
+    "loader",
+    "mdx"
   ],
-  "repository": "https://github.com/billykwok/seihon/packages/sectionize",
+  "repository": "https://github.com/billykwok/seihon/packages/loader",
   "bugs": {
     "url": "https://github.com/billykwok/seihon/issues"
   },
@@ -34,8 +35,11 @@
     "lint": "eslint ./src/**"
   },
   "dependencies": {
-    "deepmerge": "^4.2.2",
-    "unist-util-find-after": "^3.0.0",
-    "unist-util-visit-parents": "^3.1.0"
+    "@babel/types": "^7.11.0"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.11.1",
+    "@seihon/loader": "*",
+    "babel-plugin-macros": "^2.8.0"
   }
 }

@@ -5,7 +5,6 @@
 [![minified size](https://badgen.net/bundlephobia/min/@seihon/sectionize)](https://bundlephobia.com/result?p=@seihon/sectionize)
 [![GZip size](https://badgen.net/bundlephobia/minzip/@seihon/sectionize)](https://bundlephobia.com/result?p=@seihon/sectionize)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
-[![Greenkeeper badge](https://badges.greenkeeper.io/billykwok/seihon.svg)](https://greenkeeper.io)
 [![codecov](https://codecov.io/gh/billykwok/seihon/branch/master/graph/badge.svg)](https://codecov.io/gh/billykwok/seihon)
 [![CircleCI](https://circleci.com/gh/billykwok/seihon/tree/master.svg?style=svg)](https://circleci.com/gh/billykwok/seihon/tree/master)
 
@@ -23,7 +22,7 @@
 
 ## Usage
 
-This is an example of using `@seihon/section` alone. For a complete example of the entire Seihon toolkit, please refer to the main [`README.md`](https://github.com/billykwok/seihon/blob/master).
+This is an example of using `@seihon/section` alone. For a complete example of the entire Seihon toolkit, please refer to the main [`README.md`](https://github.com/billykwok/seihon).
 
 ```javascript
 // webpack.config.js

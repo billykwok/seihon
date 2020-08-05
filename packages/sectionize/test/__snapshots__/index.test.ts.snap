@@ -96,6 +96,61 @@ exports[`sectionize layout with custom tag 1`] = `
 </custom>
 `;
 
+exports[`sectionize layout with customed whitelist elements 1 1`] = `
+<section>
+  <p>
+    Overview
+  </p>
+  <blockquote>
+    <p>
+      Lorem Ipsum
+    </p>
+  </blockquote>
+  <p>
+    Lorem Ipsum
+  </p>
+  <p>
+    <a href="https://google.com/abc.png">
+      Img
+    </a>
+  </p>
+  <ul>
+    <li>
+      item 1
+    </li>
+    <li>
+      item 2
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`sectionize layout with customed whitelist elements 2 1`] = `
+<section>
+  <blockquote>
+    <p>
+      Lorem Ipsum
+    </p>
+  </blockquote>
+  <p>
+    Lorem Ipsum
+  </p>
+  <p>
+    <a href="https://google.com/abc.png">
+      Img
+    </a>
+  </p>
+  <ul>
+    <li>
+      item 1
+    </li>
+    <li>
+      item 2
+    </li>
+  </ul>
+</section>
+`;
+
 exports[`sectionize layout with whitelist elements 1`] = `
 <section>
   <h1>

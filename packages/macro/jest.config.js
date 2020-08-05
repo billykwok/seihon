@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: '@seihon/loader',
+  displayName: '@seihon/macro',
   testEnvironment: 'node',
   coverageProvider: 'v8',
   verbose: true,

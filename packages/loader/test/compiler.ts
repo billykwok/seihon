@@ -1,9 +1,11 @@
 import path from 'path';
-import webpack, { Stats } from 'webpack';
+import webpack from 'webpack';
+
+import type { Stats } from 'webpack';
 
 const loader = path.resolve(__dirname, '../src/index.ts');
 
-export default function compile(entry: string, options = {}) {
+export default function compile(entry: string, options = {}): Promise<Stats> {
   const compiler = webpack({
     mode: 'production',
     context: __dirname,
