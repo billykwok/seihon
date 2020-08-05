@@ -8,4 +8,4 @@ export type CollectionOptions = {
   hook?: (output: string) => string;
 };
 
-export type Options = { name: string; parallel: number };
+export type Options = { name: string; esModule: boolean; parallel: number };

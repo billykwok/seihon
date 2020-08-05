@@ -35,7 +35,7 @@ export default function collectionLoader(
 ): void {
   const callback = this.async();
   this.cacheable();
-  const { name, parallel } = deepmerge.all<Options>([
+  const { name, esModule, parallel } = deepmerge.all<Options>([
     getDefaultOptions(path.extname(this.resourcePath)),
     getOptions(this) || {},
   ]);
@@ -54,7 +54,10 @@ export default function collectionLoader(
     const transformedData = transform(data as Record<string, unknown>, content);
 
     const fm = serializeFrontmatter(transformedData, serialize, this.context);
-    const code = hook(`\n${content}\n\nexport const frontmatter = ${fm};\n`);
+    const exportCode = esModule
+      ? `export const frontmatter=${fm};`
+      : `module.exports={frontmatter:${fm}};`;
+    const code = hook(`\n${content}\n\n${exportCode}\n`);
     this.addDependency(this.resourcePath);
     return callback(null, code);
   } else if (matchPath(this.resourcePath, /\.(jsx?|tsx?)$/gi)) {
@@ -88,12 +91,13 @@ export default function collectionLoader(
     if (sort) {
       streams = streams.sortBy(sort);
     }
+    const exportCode = esModule ? 'export default ' : 'module.exports=';
     return streams
       .map(({ path: mdxPath, data: mdxData }) =>
         serializeFrontmatter(mdxData, serialize, path.dirname(mdxPath))
       )
       .toArray((data) =>
-        callback(null, hook(`export default [${data.join(',')}];\n`))
+        callback(null, hook(`${exportCode}[${data.join(',')}];\n`))
       );
   }
   throw new Error('Unsupported file type');
