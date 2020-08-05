@@ -16,7 +16,9 @@ It currently consists of two libraries.
    - It allows you to statically generate Table of Content, Blog Directory, Project List, or anything that contains a collection of data derived from [`frontmatter`](https://github.com/jxson/front-matter), without manual maintenance. You can even paginate the result using query parameters.
    - Additionally, this loader allows you to transform frontmatter into actually content in the markdown part of the MDX document.
 
-2. [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize) is a [`unified`](https://github.com/unifiedjs/unified) plugin that divides a continuous piece of content into chunks wrapped by a customizable tag.
+2. [`@seihon/macro`](https://github.com/billykwok/seihon/tree/master/packages/macro) is a [`babel-macro`](https://github.com/kentcdodds/babel-plugin-macros) that transpiles `collection<Item>('../example.collection.js')` into `require('../example.collection.js')`.
+
+3. [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize) is a [`unified`](https://github.com/unifiedjs/unified) plugin that divides a continuous piece of content into chunks wrapped by a customizable tag.
    - To use it with [`@mdx-js/loader`](https://github.com/mdx-js/mdx/tree/master/packages/loader), you can add it to the `remarkPlugins` option.
    - To use it with [`unified`](https://github.com/unifiedjs/unified), you just need to place this plugin into the `.use()` pipeline.
 
@@ -27,6 +29,7 @@ It currently consists of two libraries.
 This is an example of a complete usage of the Seihon library. For individual usage, please refer to their own README.md.
 
 - [`@seihon/loader`](https://github.com/billykwok/seihon/tree/master/packages/loader)
+- [`@seihon/macro`](https://github.com/billykwok/seihon/tree/master/packages/macro)
 - [`@seihon/sectionize`](https://github.com/billykwok/seihon/tree/master/packages/sectionize)
 
 Although Seihon makes no assumption about your project structure, it's always easier to explain its usage with one. Take the following structure as an example.
@@ -118,10 +121,12 @@ module.exports = {
 ```javascript
 // src/components/home.jsx
 import React from 'react';
-import collection from '../content/posts/collection.config.js';
+import collection from '@seihon/macro';
+
+const posts = collection('../content/posts/collection.config.js');
 
 export default function Blog() {
-  return collection.map(({ postId, minRead }) => (
+  return posts.map(({ postId, minRead }) => (
     <PostPreview postId={postId} minRead={minRead} />
   ));
 }

@@ -26,6 +26,7 @@
     "acorn": "^7.4.0",
     "chokidar": "^3.4.1",
     "core-js": "^3.6.5",
+    "dot-prop": "^5.2.0",
     "eslint-utils": "^2.1.0",
     "handlebars": "^4.7.6",
     "kind-of": "^6.0.3",
