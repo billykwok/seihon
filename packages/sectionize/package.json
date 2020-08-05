@@ -1,7 +1,7 @@
 {
   "name": "@seihon/sectionize",
   "description": "A Unified plugin for dividing a continuous piece of content into chunks wrapped by a customizable tag",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "exports": {
     "require": "./lib/index.js"
   },
