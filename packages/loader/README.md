@@ -2,11 +2,8 @@
 
 [![npm version](https://badgen.net/npm/v/@seihon/loader)](https://www.npmjs.com/package/@seihon/loader)
 [![download](https://badgen.net/npm/dm/@seihon/loader)](https://www.npmjs.com/package/@seihon/loader)
-[![minified size](https://badgen.net/bundlephobia/min/@seihon/loader)](https://bundlephobia.com/result?p=@seihon/loader)
-[![GZip size](https://badgen.net/bundlephobia/minzip/@seihon/loader)](https://bundlephobia.com/result?p=@seihon/loader)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
-[![Greenkeeper badge](https://badges.greenkeeper.io/billykwok/seihon.svg)](https://greenkeeper.io)
-[![codecov](https://codecov.io/gh/billykwok/seihon/branch/master/graph/badge.svg)](https://codecov.io/gh/billykwok/seihon)
+[![License](https://badgen.net/npm/license/@seihon/loader)](https://github.com/billykwok/seihon/blob/master/LICENSE)
 [![CircleCI](https://circleci.com/gh/billykwok/seihon/tree/master.svg?style=svg)](https://circleci.com/gh/billykwok/seihon/tree/master)
 
 > Seihon【製本】(Bookbinding in Japanese) is a JavaScript toolkit that improves your MDX transformation pipeline. It allows you to quickly transform MDX documents into a collection (like turning codices into book).
@@ -23,7 +20,7 @@
 
 ## Usage
 
-This is an example of using `@seihon/loader` alone. For a complete example of the entire Seihon toolkit, please refer to the main [`README.md`](https://github.com/billykwok/seihon/blob/master).
+This is an example of using `@seihon/loader` alone. For a complete example of the entire Seihon toolkit, please refer to the main [`README.md`](https://github.com/billykwok/seihon).
 
 Although Seihon makes no assumption about your project structure, it's always easier to explain its usage with one. Take the following structure as an example.
 

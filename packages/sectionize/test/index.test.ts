@@ -1,10 +1,10 @@
+import { describe, test, expect } from '@jest/globals';
 import unified from 'unified';
 import remark from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import html from 'rehype-stringify';
 import prettier from 'prettier';
 import { source } from 'common-tags';
-
 import sectionize from '../src';
 
 function process(options?: any) {
@@ -110,6 +110,38 @@ describe('sectionize', () => {
         Overview
 
         ## Subheading 1
+
+        Lorem Ipsum
+
+        [Img](https://google.com/abc.png)
+
+        * item 1
+        * item 2
+      `
+    ).toMatchSnapshot();
+  });
+
+  test('layout with customed whitelist elements 1', () => {
+    expect(
+      process({ whitelist: ['heading', 'blockquote'] })`
+        Overview
+
+        > Lorem Ipsum
+
+        Lorem Ipsum
+
+        [Img](https://google.com/abc.png)
+
+        * item 1
+        * item 2
+      `
+    ).toMatchSnapshot();
+  });
+
+  test('layout with customed whitelist elements 2', () => {
+    expect(
+      process({ whitelist: ['heading', 'blockquote'] })`
+        > Lorem Ipsum
 
         Lorem Ipsum
 

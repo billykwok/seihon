@@ -40,17 +40,6 @@ export const frontmatter = {
   summary: \\"Below is an example of JSX embedded in Markdown.\\",
   tags: [\\"Introduction\\", \\"Testing\\"],
 };
-
-const makeShortcode = (name) =>
-  function MDXDefaultShortcode(props) {
-    console.warn(
-      \\"Component \\" +
-        name +
-        \\" was not imported, exported, or provided by MDXProvider as global scope\\"
-    );
-    return mdx(\\"div\\", props);
-  };
-
 const layoutProps = {
   frontmatter,
 };

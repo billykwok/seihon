@@ -1,6 +1,6 @@
+import { describe, test, expect } from '@jest/globals';
 import path from 'path';
 import prettier from 'prettier';
-
 import compile from './compiler';
 
 describe('loader', () => {

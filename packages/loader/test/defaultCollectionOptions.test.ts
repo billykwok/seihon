@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import defaultOptions from '../src/defaultCollectionOptions';
 
 describe('defaultCollectionOptions', () => {

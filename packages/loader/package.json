@@ -2,8 +2,18 @@
   "name": "@seihon/loader",
   "description": "A Webpack loader that transforms and organizes MDX for static site generation.",
   "version": "0.1.4",
-  "main": "lib/index.js",
-  "author": "Billy Kwok <xobkwok@gmail.com>",
+  "exports": {
+    "require": "./lib/index.js"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Billy Kwok <opensource@billykwok.me>",
   "license": "MIT",
   "keywords": [
     "seihon",
@@ -11,12 +21,6 @@
     "loader",
     "mdx"
   ],
-  "files": [
-    "lib"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": "https://github.com/billykwok/seihon/packages/loader",
   "bugs": {
     "url": "https://github.com/billykwok/seihon/issues"
@@ -24,10 +28,8 @@
   "homepage": "https://github.com/billykwok/seihon",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "yarn clean && babel src --root-mode=upward --out-dir lib --extensions .ts,.tsx,.mjs,.js,.jsx",
-    "eslint": "eslint ./src/**",
-    "lint": "yarn eslint",
-    "test": "jest"
+    "build": "yarn clean && babel src --root-mode=upward --out-dir lib --extensions .ts",
+    "lint": "eslint ./src/**"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
@@ -37,7 +39,7 @@
     "loader-utils": "^2.0.0"
   },
   "peerDependencies": {
-    "@mdx-js/loader": "^1.6.1",
-    "webpack": "^4.43.0"
+    "@mdx-js/loader": "^1.6.16",
+    "webpack": "^4.44.1"
   }
 }
