@@ -6,13 +6,14 @@ export default function serializeFrontmatter(
   return (
     '{' +
     Object.keys(data)
-      .map((key) => {
-        const value =
-          key in serialize
-            ? serialize[key](data[key], context)
-            : JSON.stringify(data[key]);
-        return `${key}:${value}`;
-      })
+      .map(
+        (key) =>
+          `${key}:${
+            key in serialize
+              ? serialize[key](data[key], context)
+              : JSON.stringify(data[key])
+          }`
+      )
       .join(',') +
     '}'
   );

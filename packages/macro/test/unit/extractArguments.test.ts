@@ -1,14 +1,14 @@
-import { describe, test, expect } from '@jest/globals';
 import util from 'util';
-import {
-  stringLiteral,
-  objectExpression,
-  continueStatement,
-} from '@babel/types';
 import { MacroError } from 'babel-plugin-macros';
-import extractArgumentPaths from '../../src/extractArguments';
-
 import type { NodePath } from '@babel/core';
+import {
+  continueStatement,
+  objectExpression,
+  stringLiteral,
+} from '@babel/types';
+import { describe, expect, test } from '@jest/globals';
+
+import extractArgumentPaths from '../../src/extractArguments';
 
 function createReferencePath(argumentNodes: NodePath[]): NodePath {
   return {
@@ -32,7 +32,9 @@ describe('arguments', () => {
   });
 
   test('parse input that is not a function call', () => {
-    const referencePath = { parentPath: { type: 'Expression' } } as NodePath;
+    const referencePath = {
+      parentPath: { type: 'Expression' },
+    } as unknown as NodePath;
     expect(() => extractArgumentPaths(referencePath)).toThrow(
       new MacroError('Please use it as a function')
     );

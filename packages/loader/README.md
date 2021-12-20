@@ -10,11 +10,7 @@
 >
 > More importantly, this toolkit is the last piece of the puzzle that enables code-splitted CMS-less MDX-based static site generation.
 
-`@seihon/loader` is a [`webpack`](https://github.com/webpack/webpack) loader that collects [`frontmatter`](https://github.com/jxson/front-matter) from all MDX documents and transforms them into one single object.
-
-- It allows you to statically generate Table of Content, Blog Directory, Project List, or anything that contains a collection of data derived from [`frontmatter`](https://github.com/jxson/front-matter), without manual maintenance. You can even paginate the result using query parameters.
-
-- Additionally, this loader allows you to transform frontmatter into actually content in the markdown part of the MDX document.
+`@seihon/loader` is a [`webpack`](https://github.com/webpack/webpack) loader that collects [`frontmatter`](https://github.com/jxson/front-matter) from all MDX documents and transforms them into one single object. It allows you to statically generate Table of Content, Blog Directory, Project List, or anything that contains a collection of data derived from [`frontmatter`](https://github.com/jxson/front-matter), without manual maintenance. You can even paginate the result using query parameters.
 
 > In most occasions, you need to use this toolkit together with [`webpack`](https://github.com/webpack/webpack), [`@mdx-js/loader`](https://github.com/mdx-js/mdx/tree/master/packages/loader), [`babel-loader`](https://github.com/babel/babel-loader) and [`loadable-components`](https://github.com/smooth-code/loadable-components) in order to build a complete CMS-less static site that automatically.
 
@@ -39,10 +35,10 @@ my-site/
         effective-javascript/
           index.mdx
           ...
-        collection.config.js
+        seihon.config.js
       projects/
         ...
-        collection.config.js
+        seihon.config.js
     ...
   webpack.config.js
   ...
@@ -50,18 +46,13 @@ my-site/
 
 ```javascript
 // webpack.config.js
-import sectionize from '@seihon/sectionize';
 // ...
 module: {
   rules: [
     {
-      test: /\.mdx?$/,
-      use: ['babel-loader', '@mdx-js/loader', '@seihon/loader']
+      test: /seihon\.config\.js$/,
+      use: ['babel-loader', '@seihon/loader'],
     },
-    {
-      test: /collection\.config\.js$/,
-      use: ['babel-loader', '@seihon/loader']
-    }
     // ...
   ];
 }
@@ -88,7 +79,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ```
 
 ```javascript
-// src/content/{posts,projects}/collection.config.js
+// src/content/{posts,projects}/seihon.config.js
 module.exports = {
   transform: (frontmatter, text) => {
     ...frontmatter,
@@ -104,37 +95,38 @@ module.exports = {
 ```javascript
 // src/components/home.jsx
 import React from 'react';
-import collection from '../content/posts/collection.config.js';
+import seihon from '@seihon/macro';
+
+const posts = seihon('../content/posts/seihon.config.js');
 
 export default function Blog() {
-  return collection.map(({ postId, minRead }) => (
+  return posts.map(({ postId, minRead }) => (
     <PostPreview postId={postId} minRead={minRead} />
   ));
 }
 ```
 
-```javascript
-// src/components/post.jsx
-import React from 'react';
-import loadable from '@loadable/component';
-import { MDXProvider } from '@mdx-js/react';
+## Configuration
 
-const Markdown = loadable.lib((props: Props) =>
-  import(
-    /* webpackInclude: /\.mdx?$/i */
-    `../../content/blog/${props.postId}`
-  )
-);
+### Loader Options
 
-// postId can be extracted from URL segment using your favorite routing library, e.g. example.com/blog/lorem-ipsum-1
-export default function Post({ postId, ...props }) {
-  return (
-    <MDXProvider>
-      <Markdown postId={postId}>
-        {({ default: Component, frontmatter }) => <Component {...props} />}
-      </Markdown>
-    </MDXProvider>
-  );
+`@seihon/loader` takes two options, which control the global behaviors.
+
+```js
+{
+  esModule: true, // boolean - wether to emit the resulting frontmatter array in ES Module syntax
+  parallel: 10 // number - the level of parallelism used when reading frontmatters from markdown files
+}
+```
+
+The individual `seihon.config.js` determines how a specific collection of frontmatters is loaded. The filename `seihon.config.js` is just a convention. It can be changed to any name as you like.
+
+```js
+{
+  transform: (frontmatter, markdownContent, filePath) => frontmatter, // function - allow custom transformation of frontmatter
+  sort: (a, b) => a < b; // function - allow custom sorting of the list of frontmatters
+  serialize: {}, // Record<string, data => string> - allow custom serialization of a specific key in the frontmatter
+  hook: code => code // function - allow custom transformation of the final code right before emitting
 }
 ```
 
