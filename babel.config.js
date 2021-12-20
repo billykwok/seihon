@@ -9,9 +9,7 @@ module.exports = {
         allExtensions: true,
         allowNamespaces: true,
         allowDeclareFields: true,
-        onlyRemoveTypeImports: true,
       },
     ],
-    '@babel/preset-react',
   ],
 };
