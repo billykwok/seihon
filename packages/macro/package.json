@@ -1,7 +1,7 @@
 {
   "name": "@seihon/macro",
   "description": "A Babel macro for @seihon/loader",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "commonjs",
   "exports": {
     "require": "./lib/index.js"
