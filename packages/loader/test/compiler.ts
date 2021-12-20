@@ -14,7 +14,6 @@ export default function compile(entry: string, options = {}): Promise<Stats> {
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
       alias: { fs: 'memfs' },
     },
-    externals: { react: 'react' },
     module: {
       rules: [{ test: /seihon\.config\.js$/i, use: { loader, options } }],
     },
