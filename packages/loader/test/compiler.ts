@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-
 import type { Stats } from 'webpack';
 
 const loader = path.resolve(__dirname, '../src/index.ts');
@@ -17,14 +16,7 @@ export default function compile(entry: string, options = {}): Promise<Stats> {
     },
     externals: { react: 'react' },
     module: {
-      rules: [
-        { test: /custom\.js$/i, use: { loader, options } },
-        { test: /collection\.config\.js$/i, use: { loader, options } },
-        {
-          test: /\.mdx?$/,
-          use: ['babel-loader', '@mdx-js/loader', { loader, options }],
-        },
-      ],
+      rules: [{ test: /seihon\.config\.js$/i, use: { loader, options } }],
     },
   });
 
@@ -32,7 +24,20 @@ export default function compile(entry: string, options = {}): Promise<Stats> {
     compiler.run((err, stats) => {
       if (err) return reject(err);
       if (stats.hasErrors()) {
-        return reject(new Error(stats.toJson().errors.toString()));
+        console.dir(
+          stats
+            .toJson()
+            .errors.map((it) => it.message)
+            .join('\n')
+        );
+        return reject(
+          new Error(
+            stats
+              .toJson()
+              .errors.map((it) => it.message)
+              .join('\n')
+          )
+        );
       }
       resolve(stats);
     });

@@ -26,7 +26,7 @@ This is an example of using `@seihon/macro` alone. For a complete example of the
 import React from 'react';
 import collection from '@seihon/macro';
 
-const posts = collection('../content/posts/collection.config.js');
+const posts = collection('../content/posts/seihon.config.js');
 
 export default function Blog() {
   return posts.map(({ postId, minRead }) => (
