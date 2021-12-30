@@ -35,7 +35,7 @@ export default function collectionLoader(this: LoaderContext<any>): void {
   const parsed = require(this.resourcePath) as
     | CollectionOptions
     | { default: CollectionOptions };
-  const { transform, sort, serialize, hook } = deepmerge(
+  const { transform, filter, sort, serialize } = deepmerge(
     defaultCollectionOptions,
     'default' in parsed ? parsed.default : parsed
   );
@@ -51,8 +51,13 @@ export default function collectionLoader(this: LoaderContext<any>): void {
     .parallel(parallel)
     .map(({ path: mdxPath, data: mdxContent }) => {
       const { data, content } = matter(mdxContent);
-      return { path: mdxPath, data: transform(data, content, mdxPath) };
-    });
+      return { frontmatter: data, markdown: content, path: mdxPath };
+    })
+    .filter(filter)
+    .map(({ frontmatter, markdown, path }) => ({
+      path,
+      data: transform(frontmatter, markdown, path),
+    }));
 
   if (sort) {
     streams = streams.sortBy(sort);
@@ -63,5 +68,5 @@ export default function collectionLoader(this: LoaderContext<any>): void {
     .map(({ path: mdxPath, data: mdxData }) =>
       serializeFrontmatter(mdxData, serialize, path.dirname(mdxPath))
     )
-    .toArray((it) => callback(null, hook(`${exportCode}[${it.join(',')}];\n`)));
+    .toArray((it) => callback(null, `${exportCode}[${it.join(',')}];\n`));
 }

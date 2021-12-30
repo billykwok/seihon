@@ -1,4 +1,5 @@
-import { describe, test, expect } from '@jest/globals';
+import { describe, expect, test } from '@jest/globals';
+
 import defaultOptions from '../src/defaultCollectionOptions';
 
 describe('defaultCollectionOptions', () => {
@@ -8,16 +9,15 @@ describe('defaultCollectionOptions', () => {
     expect(result).toEqual(frontmatter);
   });
 
-  test('has correct default serialize', () => {
-    expect(defaultOptions.serialize).toEqual({});
+  test('has correct default hook', () => {
+    expect(defaultOptions.filter(null)).toEqual(true);
   });
 
   test('has correct default sort', () => {
     expect(defaultOptions.sort).toBeUndefined();
   });
 
-  test('has correct default hook', () => {
-    const content = 'lorem ipsum';
-    expect(defaultOptions.hook(content)).toEqual(content);
+  test('has correct default serialize', () => {
+    expect(defaultOptions.serialize).toEqual({});
   });
 });
