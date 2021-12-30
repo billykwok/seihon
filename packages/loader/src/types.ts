@@ -1,15 +1,13 @@
+export type Item = {
+  frontmatter: Record<string, unknown>;
+  markdown: string;
+  filepath: string;
+};
+
 export type CollectionOptions = {
-  transform?: (
-    frontmatter: Record<string, unknown>,
-    markdown?: string,
-    filepath?: string
-  ) => Record<string, unknown>;
-  filter?: (item: {
-    frontmatter?: Record<string, unknown>;
-    markdown?: string;
-    filepath?: string;
-  }) => boolean;
-  sort?: (a: any, b: any) => number;
+  transform?: (item: Item) => Record<string, unknown>;
+  filter?: (item: Item) => boolean;
+  sort?: (a: Item, b: Item) => number;
   serialize?: { [property: string]: (value: any, context: string) => string };
 };
 
