@@ -9,7 +9,7 @@ import type { LoaderContext } from 'webpack';
 import defaultCollectionOptions from './defaultCollectionOptions';
 import matchPath from './matchPath';
 import serializeFrontmatter from './serializeFrontmatter';
-import type { CollectionOptions, Options } from './types';
+import type { CollectionOptions, Item, Options } from './types';
 
 const readFile = highland.wrapCallback(
   (
@@ -51,13 +51,9 @@ export default function collectionLoader(this: LoaderContext<any>): void {
     .parallel(parallel)
     .map(({ path: mdxPath, data: mdxContent }) => {
       const { data, content } = matter(mdxContent);
-      return { frontmatter: data, markdown: content, path: mdxPath };
+      return { frontmatter: data, markdown: content, filepath: mdxPath };
     })
-    .filter(filter)
-    .map(({ frontmatter, markdown, path }) => ({
-      path,
-      data: transform(frontmatter, markdown, path),
-    }));
+    .filter(filter);
 
   if (sort) {
     streams = streams.sortBy(sort);
@@ -65,6 +61,7 @@ export default function collectionLoader(this: LoaderContext<any>): void {
 
   const exportCode = esModule ? 'export default ' : 'module.exports=';
   return streams
+    .map((item) => ({ path: item.filepath, data: transform(item) }))
     .map(({ path: mdxPath, data: mdxData }) =>
       serializeFrontmatter(mdxData, serialize, path.dirname(mdxPath))
     )

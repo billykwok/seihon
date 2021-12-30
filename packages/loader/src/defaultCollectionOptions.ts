@@ -1,7 +1,7 @@
 import type { CollectionOptions } from './types';
 
 const defaultCollectionOptions: CollectionOptions = {
-  transform: (data) => data,
+  transform: ({ frontmatter }) => frontmatter,
   filter: () => true,
   sort: undefined,
   serialize: {},

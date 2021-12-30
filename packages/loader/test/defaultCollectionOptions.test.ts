@@ -5,7 +5,11 @@ import defaultOptions from '../src/defaultCollectionOptions';
 describe('defaultCollectionOptions', () => {
   test('has correct default transform', () => {
     const frontmatter = { title: 'some text' };
-    const result = defaultOptions.transform(frontmatter, 'lorem ipsum');
+    const result = defaultOptions.transform({
+      frontmatter,
+      markdown: 'lorem ipsum',
+      filepath: './some.mdx',
+    });
     expect(result).toEqual(frontmatter);
   });
 
